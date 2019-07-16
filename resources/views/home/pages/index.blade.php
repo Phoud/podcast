@@ -6,7 +6,7 @@
 @endsection
 @section('content')
 <div class="home">
-		<div class="background_image" style="background-image:url({{ url('/') }}/home/images/index.jpg)"></div>
+		<div class="background_image" style="background-image:url({{ url('/') }}/home/images/about.jpg)"></div>
 		<div class="home_container">
 			<div class="container">
 				<div class="row">
