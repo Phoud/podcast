@@ -222,7 +222,7 @@ class AdminController extends Controller
             'date_of_publish' => 'required',
             'issue' => 'required',
             'cover' => 'required|image',
-            'magazine' => 'required',
+            'magazine' => 'required|max:500000|mimes:pdf',
             'description' => 'required'
 
         ]);
