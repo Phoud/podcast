@@ -16,18 +16,18 @@
 							<div class="tags">
 								<ul class="d-flex flex-row align-items-start justify-content-start">
 									@foreach($latest->media_tag as $post_tag)
-									<li><a onclick="return false;" href="">{{ $post_tag->tag->name }}</a></li>
+									<li><a onclick="return false;" href="">{{ $post_tag->tag->name  }}</a></li>
 									@endforeach
 								</ul>
 							</div>
 							<a href="{{ $latest->mediaType === 'podcast' ? route('episode', $latest->id) : route('video', $latest->id) }}">
-							<div class="home_title"><h1>{{ $latest->title }}</h1></div>
+							<div class="home_title"><h1>{{ $latest->title  }}</h1></div>
 							</a>
 							<div class="track_info">
 								<ul class="d-flex flex-row align-items-start justify-content-start">
-									<li><a href="#">{{ $latest->created_at->format('M d Y') }}</a></li>
+									<li><a href="#">{{ $latest->created_at->format('M d Y')  }}</a></li>
 							
-									<li><a href="#">{{ count($latest->comments) }} Comments</a></li>
+									<li><a href="#">{{ count($latest->comments)  }} Comments</a></li>
 								</ul>
 							</div>
 							
@@ -53,7 +53,7 @@
 					<div class="show">
 						<div class="show_image">
 							<a href="{{ route('episode', $podcast->id) }}">
-								<img src="{{ url('/') }}/admins/media/{{ $podcast->image }}" alt="https://unsplash.com/@icons8">
+								<img src="{{ url('/') }}/admins/media/{{ $podcast->image  }}" alt="https://unsplash.com/@icons8">
 							</a>
 							{{-- <div class="show_tags">
 								<div class="tags">
@@ -65,18 +65,18 @@
 							<div class="show_play_icon"><img src="{{ url('/') }}/home/images/play.svg" alt="play"></div>
 						</div>
 						<div class="show_content">
-							<div class="show_date"><a href="{{ route('episode', $podcast->id) }}">{{ $podcast->created_at->format('d M Y') }}</a></div>
-							<div class="show_title"><a href="{{ route('episode', $podcast->id) }}">{{ $podcast->title }}</a></div>
+							<div class="show_date"><a href="{{ route('episode', $podcast->id) }}">{{ $podcast->created_at->format('d M Y')  }}</a></div>
+							<div class="show_title"><a href="{{ route('episode', $podcast->id) }}">{{ $podcast->title  }}</a></div>
 							<div class="show_info d-flex flex-row align-items-start justify-content-start text-center">
 								<div class="show_fav d-flex flex-row align-items-center justify-content-start">
 									<div class="show_fav_icon show_info_icon"><img class="svg" src="home/images/heart.svg" alt=""></div>
-									<div class="show_fav_count">{{ \App\Like::where('post_id', $podcast->id)->get()->count() }}</div>
+									<div class="show_fav_count">{{ \App\Like::where('post_id', $podcast->id)->get()->count()  }}</div>
 								</div>
 								<div class="show_comments">
 									<a href="{{ route('episode', $podcast->id) }}">
 										<div class="d-flex flex-row align-items-center justify-content-start">
 											<div class="show_comments_icon show_info_icon"><img class="svg" src="home/images/speech-bubble.svg" alt=""></div>
-											<div class="show_comments_count">{{ count($podcast->comments) }} ຄວາມຄິດເຫັນ</div>
+											<div class="show_comments_count">{{ count($podcast->comments)  }} ຄວາມຄິດເຫັນ</div>
 										</div>
 									</a>	
 								</div>
@@ -110,7 +110,7 @@
 						<div>
 							<div class="weekly_title"><h1>{{ $videos->title }}</h1></div>
 							<div class="weekly_text">
-								{!! $videos->description !!}
+								{!! $videos->description  !!}
 							</div>
 						</div>
 					</div>
@@ -121,7 +121,7 @@
 				<div class="col-lg-6">
 					<a href="{{ route('video', $videos->id) }}">
 					<div class="weekly_image">
-						<img src="{{ url('/') }}/admins/media/{{ $videos->image }}" alt="">
+						<img src="{{ url('/') }}/admins/media/{{ $videos->image  }}" alt="">
 						
 					</div>
 					</a>
