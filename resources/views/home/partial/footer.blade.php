@@ -29,7 +29,7 @@
 						{{-- Footer content --}}
 					<div class="footer-menu">
 						<ul>
-						<li><a class="footer-menu-list" href="{{ route('about') }}">ກ່ຽວກັບພວກເຮົາ</a></li>
+						{{-- <li><a class="footer-menu-list" href="{{ route('about') }}">ກ່ຽວກັບພວກເຮົາ</a></li> --}}
 						<li><a class="footer-menu-list" href="{{ route('contact') }}">ຕິດຕໍ່ພວກເຮົາ</a></li>
 						</ul>
 					</div>

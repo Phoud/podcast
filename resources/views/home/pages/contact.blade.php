@@ -17,7 +17,7 @@
 
 	<!-- Contact -->
 
-	<div class="contact">
+	<div class="contacts">
 		<div class="container">
 			<div class="row">
 				<div class="col">
