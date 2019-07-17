@@ -263,7 +263,7 @@ class HomeController extends Controller
         $query = $request->get('query');
         switch ($type) {
             case 'mag': 
-                $mags = magazine::paginate(6);
+                $mags = magazine::orderBy('id', 'desc')->paginate(6);
                 if(!empty($query)){
                     $mags = magazine::orderBy('id', 'desc');
                     $mags->where('issue', 'like', "%{$query}%");
@@ -273,7 +273,7 @@ class HomeController extends Controller
                 break;
 
             case 'podcast': 
-                $podcasts = Media::where('mediaType', 'podcast')->paginate(6);
+                $podcasts = Media::where('mediaType', 'podcast')->orderBy('id', 'desc')->paginate(6);
                 if(!empty($query)){
                     $podcasts = Media::where('mediaType', 'podcast')->orderBy('id', 'desc');
                     $podcasts->where('title', 'like', "%{$query}%");
@@ -282,7 +282,7 @@ class HomeController extends Controller
                 return $podcasts;
                 break;
             case 'video': 
-                $videos = Media::where('mediaType', 'video')->paginate(6);
+                $videos = Media::where('mediaType', 'video')->orderBy('id', 'desc')->paginate(6);
                 if(!empty($query)){
                     $videos = Media::where('mediaType', 'video')->orderBy('id', 'desc');
                     $videos->where('title', 'like', "%{$query}%");
@@ -291,7 +291,7 @@ class HomeController extends Controller
                 return $videos;
                 break;
             case 'blog': 
-                $blogs = blog::paginate(6);
+                $blogs = blog::orderBy('id', 'desc')->paginate(6);
                 if(!empty($query)){
                     $blogs = blog::orderBy('id', 'desc');
                     $blogs->where('title', 'like', "%{$query}%");
