@@ -116,7 +116,7 @@ class HomeController extends Controller
     public function memberSignup(Request $request){
         $this->validate($request, [
             'name' => 'required',
-            'email' => 'required:email',
+            'email' => 'required:email|unique:users',
             'password' => 'required'
         ]);
         if($request->password == $request->confirmpassword){
