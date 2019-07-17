@@ -25,7 +25,6 @@
                                             <th class="border-0">ລຳດັບ</th>
                                             <th class="border-0">ຮູບວາລະສານ</th>
                                             <th class="border-0">ເລກທີ່</th>
-                                            <th class="border-0">ຊື່ວາລະສານ</th>
                                             <th class="border-0" style="text-align:right">ຕັ້ງຄ່າທົ່ວໄປ</th>
                                         </tr>
                                     </thead>
@@ -45,7 +44,7 @@
                                                 <a href="{{ route('admin.getUpdateMagazine', $show_magazine->id) }}"><i class="fa fa-edit"></i></a>
                                                 
                                                 &nbsp;&nbsp;
-                                                <i class="fa fa-trash" data-toggle="modal" data-target="#DeleteModal"></i>
+                                                <i class="fa fa-trash" data-toggle="modal" data-target="#DeleteModal-{{ $show_magazine['id'] }}"></i>
                                             </td>
                                             
                                         </tr>
@@ -66,22 +65,20 @@
 
 
 <!-- Modal Edit Type -->
- @if(isset($show_magazine))
-<div class="modal fade" id="DeleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+@foreach($show_magazines as $mag)
+<div class="modal fade" id="DeleteModal-{{ $mag['id'] }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <form action="{{ route('admin.delete.magazine', $show_magazine->id) }}" method="POST" enctype="multipart/form-data">
-                @csrf
-                <div class="modal-body">
-                    <p class="deletename">ທ່ານໝັ້ນໃຈທີ່ຈະລົບແລ້ວບໍ?</p>
-                    <br>
-                    <button class="btn btn-danger" style="border-radius:5px;">ລຶບອອກ</button>
-                </div>
-            </form>
+        <form action="{{ route('admin.delete.magazine', $mag->id) }}" method="GET">
+            <div class="modal-body">
+                <label class="lbname">ທ່ານເເນ່ໃຈ ທີ່ຈະລຶບ ຫຼື ບໍ ?</label><br>
+                <button class="btn btn-danger" style="border-radius:5px;" type="submit">ລຶບອອກ</button>
+            </div>
+        </form>
         </div>
     </div>
 </div>
-@endif
+@endforeach
 <!-- Modal Edit End -->
 @endsection
 

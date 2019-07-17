@@ -35,7 +35,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/add-magazine', 'AdminController@getAddMagazine')->name('admin.getAddMagazine');
     Route::get('/update-magazine/{id}', 'AdminController@getUpdateMagazine')->name('admin.getUpdateMagazine');
     Route::post('/edit_magazine/{id}','AdminController@edit_magazines')->name('admin.edit.magazine');
-    Route::post('/delete_magazine/{id}','AdminController@delete_magazines')->name('admin.delete.magazine');
+    Route::get('/delete_magazine/{id}','AdminController@delete_magazines')->name('admin.delete.magazine');
 
     Route::post('/insert_web_logo','AdminController@insert_web_logos')->name('admin.insert.web.logo');
     Route::post('/edit_web_logo/{id}','AdminController@edit_web_logos')->name('admin.edit.web.logo');
