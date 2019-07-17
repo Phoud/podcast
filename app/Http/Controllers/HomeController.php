@@ -134,6 +134,9 @@ class HomeController extends Controller
             }
             
             $save->save();
+
+            auth()->login($save);
+
             return back();
         }
 

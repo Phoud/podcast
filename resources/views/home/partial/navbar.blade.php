@@ -2,7 +2,7 @@
 
 		<!-- Logo -->
 		<div class="logo">
-			<a href="#"><img style="max-height: 50px;" src="https://uc0cfeaec178c5b507de2e3e56cb.previews.dropboxusercontent.com/p/thumb/AAZ0wOE7RocvRyDvy4iTKuHS9ey_dqy6s6mGqVqbLehGMUL-aLUfVQfWuCfTnDes-5-nQxwHtXyWPnVUdYpORH0VxUo_ZXcF1R3OasmCZ1vQh9QCy28Jz2GcP1tWGiRU3r5dev7I55NCLoM3OnLpTyo3w5BNymI1bFOqSwSjXVcUE8od08OM3sTha2C0rGd3AudTQm9nC0Dvl5VprkOldzRowrq3E9tyIeCd33IsfhVuKVTqRtKrYwa67m2w1Ymqzv72L5loDFdz1LLEl9MK35oHfJDCl3q0xeMxajqn3x3fWYXplmrUHN0oMCp2qrXbpXf5wD73RQi-qhM3IxcCDdW5fDCpSX3HQHHtvyvUn3DRLMyRCCZA8B1f9NND4JgXWRc/p.jpeg?size_mode=5" alt=""></a>
+			<a href="#"><img style="max-height: 50px;" src="{{ url('/') }}/admins/weblogo/{{ $logo->logo }}" alt=""></a>
 		</div>
 
 		<div class="container">

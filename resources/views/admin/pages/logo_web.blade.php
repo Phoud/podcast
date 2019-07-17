@@ -76,12 +76,12 @@
                             <div class="file-select-name" id="noFile" style="font-family: Phetsarath OT; font-size: 16px; color: #999;">
                                 ກະລຸນາເລືອກ ໂລໂກ
                             </div> 
-                            <input type="file" name="logo" id="imgInp">
+                            <input type="file" name="logo" id="chooses">
                         </div>
                     </div><br>
 
                     <div class="form-group">
-                        <img style="max-height: 150px;" id="blah" src="{{ url('/') }}/assets/images/default.png" alt="Logo"/>
+                        <img style="max-height: 150px;" id="up" src="{{ url('/') }}/assets/images/default.png" alt="Logo"/>
                     </div>
 
                     <br>
@@ -107,12 +107,12 @@
                     <div class="file-upload" id="file-upload-{{ $show_webimages['id'] }}">
                         <div class="file-select" style="border-radius: 5px;">
                             <div class="file-select-button" id="fileName" style="font-family: Phetsarath OT; font-size: 16px;">ອັບໂຫຼດ</div>
-                            <input type="file" name="logo" id="choose">
+                            <input type="file" name="logo" id="chooses">
                             {{-- <input type="hidden" name="oldlogo" value="{{$show_webimages->logo}}"> --}}
                         </div>
                     </div><br>
                     <div class="form-group">
-                        <img style="max-height: 150px;" id="upd" src="{{ url('/') }}/admins/weblogo/{{ $show_webimages->logo }}" alt="Logo"/>
+                        <img style="max-height: 150px;" id="up" src="{{ url('/') }}/admins/weblogo/{{ $show_webimages->logo }}" alt="Logo"/>
                     </div>
                     <br>
                     <button class="btn btn-success" style="border-radius:5px;" type="submit">ອັບເເດດ</button>
@@ -127,39 +127,22 @@
 @endsection
 
 @section('js')
+
 <script>
         function readURL(input) {
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
 
                 reader.onload = function (e) {
-                    $('#blah').attr('src', e.target.result);
+                    $('#up').attr('src', e.target.result);
                 }
 
                 reader.readAsDataURL(input.files[0]);
             }
         }
 
-        $("#imgInp").change(function(){
+        $("#chooses").change(function(){
             readURL(this);
         });
     </script>
-    <script>
-        function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-
-                reader.onload = function (e) {
-                    $('#upd').attr('src', e.target.result);
-                }
-
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-
-        $("#choose").change(function(){
-            readURL(this);
-        });
-    </script>
-
 @stop
