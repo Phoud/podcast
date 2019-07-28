@@ -89,10 +89,12 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/video-report-generate', 'ReportController@videoReportGenerate')->name('videoReportGenerate');
     Route::get('/magazine-report-generate', 'ReportController@magazineReportGenerate')->name('magazineReportGenerate');
     Route::get('/topdownload-report-generate', 'ReportController@topdownloadReportGenerate')->name('topdownloadReportGenerate');
+    Route::get('/toplike-report-generate', 'ReportController@toplikeReportGenerate')->name('toplikeReportGenerate');
 
     Route::get('/podcast-report', 'ReportController@podcastReport')->name('podcastReport');
     Route::get('/video-report', 'ReportController@videoReport')->name('videoReport');
     Route::get('/magazine-report', 'ReportController@magazineReport')->name('magazineReport');
     Route::get('/top-download', 'ReportController@topDownload')->name('topDownload');
+    Route::get('/top-like', 'ReportController@likeReport')->name('likeReport');
 });
 

@@ -10,6 +10,9 @@ class Media extends Model
     public function download(){
         return $this->hasMany('App\Download', 'post_id');
     }
+    public function like(){
+        return $this->hasMany('App\Like', 'post_id');
+    }
     public function category()
     {
         return $this->belongsTo('App\category');

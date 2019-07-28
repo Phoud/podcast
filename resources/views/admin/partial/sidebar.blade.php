@@ -141,6 +141,9 @@
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{ route('topDownload') }}">ລາຍງານການດາວໂຫຼດ</a>
                                         </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ route('likeReport') }}">ລາຍງານຈໍານວນຖືກໃຈ</a>
+                                        </li>
                                     </ul>
                                 </div>
                             </li>

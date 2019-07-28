@@ -66,4 +66,15 @@ class ReportController extends Controller
         $generate_pdf = PDF::loadView('admin.pages.report.ranking.topdownload-generate', ['media' => $media]);
         return $generate_pdf->download('topdownload-report-' . md5(uniqid('topdownload-report', true)) . '.pdf');
     }
+    public function likeReport(){
+        $media = Media::select('media.*', DB::raw('count(likes.post_id) as like_count'))->leftJoin('likes', 'likes.post_id', 'media.id')->groupBy('media.id')->orderBy('like_count', 'desc')->get();
+        return view('admin.pages.report.like.toplike', compact('media'));
+    }
+    
+    public function toplikeReportGenerate(){
+        $media = Media::select('media.*', DB::raw('count(likes.post_id) as like_count'))->leftJoin('likes', 'likes.post_id', 'media.id')->groupBy('media.id')->orderBy('like_count', 'desc')->get();
+        // return view('admin.pages.report.user.user-generate', compact('users'));
+        $generate_pdf = PDF::loadView('admin.pages.report.like.toplike-generate', ['media' => $media]);
+        return $generate_pdf->download('toplike-report-' . md5(uniqid('toplike-report', true)) . '.pdf');
+    }
 }
